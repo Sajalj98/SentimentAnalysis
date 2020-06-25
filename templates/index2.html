@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Sentiment Analysis</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the sentiment of a sentence
+        <br>
+        </h5>
+      </div>
+      <div class="col-md-6">
+        <div class = "input-group">
+           <span class = "input-group-addon">Enter Text Here</span>
+           <form action="/sentiment_analysis_prediction" method="post" enctype="multipart/form-data">
+           <input name = "text" class = "form-control" placeholder = "Text">
+           <input type="submit">
+           </form>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h1>Sentiment</h1>
+        <div class="alert alert-primary" role="alert">
+          {% if probability %}
+            {{ sentiment }}
+             {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h1>Probability</h1>
+        <div class="alert alert-primary" role="alert">
+          {% if probability %}
+            {{ probability }}
+             {% endif %}
+        </div>
+      </div>
+
+      <br>
+        {{pred}}<br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+
+
+  </body>
+</html>
+
